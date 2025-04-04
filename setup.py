@@ -17,6 +17,7 @@ testing_requires = [
     'pytest',
     'pytest-cov',
     'freezegun',
+    'pre-commit',
 ]
 
 setup(
