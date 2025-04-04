@@ -1,0 +1,27 @@
+# Byte-compiled / optimized / DLL files
+__pycache__
+
+# Mac
+**/.DS_Store
+.DS_Store
+
+# Distribution / packaging
+*.egg-info/
+
+# IDE stuff
+.idea
+
+# Unit test / coverage reports
+.coverage
+
+# Virtual Environments
+.env
+env/
+venv/
+.python-version
+
+# Other Scripts
+test.py
+
+*.log
+*.csv

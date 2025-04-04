@@ -1,0 +1,8 @@
+[style]
+based_on_style = pep8
+column_limit = 99
+blank_line_before_nested_class_or_def = true
+dedent_closing_brackets = true
+force_multiline_dict = true
+split_before_bitwise_operator = true
+split_before_arithmetic_operator = true
