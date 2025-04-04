@@ -6,6 +6,8 @@ with open("README.md", "r", encoding="utf-8") as fh:
 requires = [
     'dependency_injector',
     'python-dotenv==0.19.2',
+    'jupyterlab',
+    'polars==1.26.0',
 ]
 
 linting_requires = [
