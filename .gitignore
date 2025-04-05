@@ -25,3 +25,6 @@ test.py
 
 *.log
 *.csv
+
+# Jupyter Notebook
+.ipynb_checkpoints/

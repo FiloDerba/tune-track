@@ -7,6 +7,8 @@ requires = [
     'dependency_injector',
     'python-dotenv==0.19.2',
     'jupyterlab',
+    'narwhals==1.33.0',
+    'plotly==6.0.1',
     'polars==1.26.0',
 ]
 
