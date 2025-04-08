@@ -33,10 +33,9 @@ def process_original_columns(df: DataFrame) -> DataFrame:
                                                     5)).then(pl.lit("night")).alias("time_of_day"),
 
             # Create indicator for how long the song was played (1 very briefly to 5 fully)
-            pl.when(pl.col("skip_1") is True).then(1).when(pl.col("skip_2") is True).then(2).when(
-                pl.col("skip_3") is True
-            ).then(3).when(pl.col("not_skipped") is True
-                           ).then(5).otherwise(4).alias("song_completion"),
+            pl.when(pl.col("skip_1")).then(1).when(pl.col("skip_2")).then(2).when(
+                pl.col("skip_3")
+            ).then(3).when(pl.col("not_skipped")).then(5).otherwise(4).alias("song_completion"),
 
             # Create indicator for how long the user paused (0 no pause to 3 very long pause)
             pl.when(pl.col("no_pause_before_play") == 1).then(0).when(

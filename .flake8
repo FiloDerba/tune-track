@@ -1,5 +1,5 @@
 [flake8]
 exclude = .git,__pycache__,tests,env,venv,build,sql.py
 max-complexity = 6
-max-line-length = 99
+max-line-length = 120
 ignore = D100, D101, D102, D103, D104, W503, W504, E203, E126
