@@ -4,8 +4,17 @@ with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 requires = [
-    'dependency_injector', 'python-dotenv==0.19.2', 'altair==5.5.0', 'jupyterlab',
-    'narwhals==1.33.0', 'numpy==2.2.0', 'plotly==6.0.1', 'polars==1.26.0', 'scikit-learn==1.6.1'
+    'dependency_injector',
+    'python-dotenv==0.19.2',
+    'altair==5.5.0',
+    'jupyterlab',
+    'narwhals==1.33.0',
+    'numpy==2.2.0',
+    'plotly==6.0.1',
+    'polars==1.26.0',
+    'scikit-learn==1.6.1',
+    'vegafusion[embed]>=1.5.0',
+    "vl-convert-python>=1.6.0"
 ]
 
 linting_requires = [

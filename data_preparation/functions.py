@@ -47,6 +47,14 @@ def process_original_columns(df: DataFrame) -> DataFrame:
         .when(pl.col("long_pause_before_play") == 1).then(2)
         .otherwise(3)
         .alias("pause_length_before_play"),
+
+        pl.when(pl.col("hist_user_behavior_n_seekfwd") == 0).then(0)
+        .otherwise(1)
+        .alias("hist_user_behavior_n_seekfwd"),
+
+        pl.when(pl.col("hist_user_behavior_n_seekback") == 0).then(0)
+        .otherwise(1)
+        .alias("hist_user_behavior_n_seekback"),
     ])
 
     # Drop columns no longer needed
