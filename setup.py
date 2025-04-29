@@ -10,11 +10,12 @@ requires = [
     'jupyterlab',
     'narwhals==1.33.0',
     'numpy==2.2.0',
+    'pandas==2.2.3',
     'plotly==6.0.1',
     'polars==1.26.0',
     'scikit-learn==1.6.1',
     'vegafusion[embed]>=1.5.0',
-    "vl-convert-python>=1.6.0"
+    "vl-convert-python>=1.6.0",
 ]
 
 linting_requires = [

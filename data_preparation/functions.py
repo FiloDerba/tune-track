@@ -68,3 +68,33 @@ def process_original_columns(df: DataFrame) -> DataFrame:
     ])
 
     return df
+
+
+def process_metadata(df_sessions: DataFrame, df_metadata: DataFrame, cols_to_process: list[str]) -> DataFrame:
+    # Join metadata onto session data
+    col_to_add = ["track_id", "release_year", "us_popularity_estimate"]
+    df_sessions_with_metadata = (
+        df_sessions.join(
+            df_metadata.select(cols_to_process + col_to_add),
+            left_on="track_id_clean",
+            right_on="track_id",
+            how="left",
+        )
+        # round to 3 decimal points
+        .with_columns([
+            pl.col(col).round(3).alias(col)
+            for col in cols_to_process + ["us_popularity_estimate"]
+        ])
+    )
+
+    # Add difference columns
+    df_sessions_with_metadata = df_sessions_with_metadata.with_columns([
+        pl.col(col)
+        .diff()
+        .over("session_id")
+        .fill_null(0)
+        .alias(f"change_in_{col}")
+        for col in cols_to_process
+    ])
+
+    return df_sessions_with_metadata
