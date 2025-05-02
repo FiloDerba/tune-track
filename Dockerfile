@@ -9,9 +9,11 @@ ENV PYTHONUNBUFFERED=1
 # Set working dir inside the container
 WORKDIR /app
 
+
 # This prevents rebuilding all requirements if they are not changed
 # See https://stackoverflow.com/a/34399661
 COPY setup.py /app
+
 # This is to ensure first time setup will work.
 RUN touch README.md
 # Ensure pip and setuptools are up to date, in case the image is not
