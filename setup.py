@@ -16,6 +16,7 @@ requires = [
     'scikit-learn==1.6.1',
     'vegafusion[embed]>=1.5.0',
     "vl-convert-python>=1.6.0",
+    "hmmlearn"
 ]
 
 linting_requires = [
